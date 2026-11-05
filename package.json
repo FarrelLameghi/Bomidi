@@ -1,0 +1,11 @@
+{
+  "name": "bomidi-minimarket",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Website statis katalog dan pemesanan sembako Bomidi",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "package": "python3 scripts/package_site.py"
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#214d36">
+  <meta name="description" content="Belanja sembako dan kebutuhan dapur harian dengan mudah di minimarket Bomidi.">
+  <title>Bomidi — Belanja kebutuhan harian</title>
+  <link rel="icon" href="assets/images/fallback.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#beranda" aria-label="Bomidi, beranda"><span class="brand-mark" aria-hidden="true">B</span><span>BOMIDI<span class="brand-sub">MINIMARKET KELUARGA</span></span></a>
+      <nav aria-label="Navigasi utama"><a href="#katalog">Katalog</a><a href="#cara-belanja">Cara belanja</a><a href="#faq">FAQ</a></nav>
+      <a class="cart-link" href="#keranjang"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg><span>Keranjang</span><span id="cart-count" class="count">0</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" id="beranda" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-line"></span> KEBUTUHAN HARIAN, JADI MUDAH</p>
+        <h1 id="hero-title">Belanja kebutuhan rumah.<br><span>Praktis bersama Bomidi.</span></h1>
+        <p class="hero-description">Lengkapi dapur dan kebutuhan keluarga tanpa repot. Pilih sembako favoritmu, susun keranjang, lalu konfirmasi pesanan dengan mudah.</p>
+        <div class="hero-actions"><a class="button" href="#katalog">Belanja sekarang <span aria-hidden="true">↗</span></a><a class="text-link" href="#cara-belanja">Cara belanja <span aria-hidden="true">→</span></a></div>
+        <div class="hero-notes"><span><span aria-hidden="true">✓</span> Produk kebutuhan harian</span><span><span aria-hidden="true">✓</span> Harga per kemasan</span><span><span aria-hidden="true">✓</span> Pesan mudah via WhatsApp</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Ilustrasi keranjang belanja berisi kebutuhan dapur"><span class="hero-grocery grocery-one">🥖</span><span class="hero-grocery grocery-two">🥛</span><span class="hero-grocery grocery-three">🥬</span><span class="hero-grocery grocery-four">🍚</span><div class="visual-caption"><span class="compass" aria-hidden="true">♡</span><div><strong>Belanja nyaman untuk keluarga.</strong><span>Barang sehari-hari, dekat di hati.</span></div></div></div>
+    </section>
+    <div class="intro-strip"><div class="container strip-inner"><span class="strip-label">BELANJA DI BOMIDI</span><span>20 pilihan produk</span><span>5 kategori kebutuhan</span><span>Keranjang praktis</span></div></div>
+    <section class="container catalog-section" id="katalog" aria-labelledby="catalog-heading">
+      <div class="section-heading"><div><p class="eyebrow">PILIH KEBUTUHANMU</p><h2 id="catalog-heading">Belanja harian, siap dipilih.</h2></div><p>Dari bahan pokok hingga pelengkap dapur.<br>Semua pilihan praktis dalam satu tempat.</p></div>
+      <p class="demo-note"><span aria-hidden="true">ⓘ</span> Katalog dan harga adalah contoh. Ketersediaan produk dan harga akhir dikonfirmasi oleh toko.</p>
+      <div class="shop-layout">
+        <div class="catalog-content">
+          <div class="catalog-toolbar"><div class="search-wrap"><label class="sr-only" for="search">Cari produk</label><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input id="search" type="search" placeholder="Cari beras, minyak, mi, dan lainnya…" autocomplete="off"></div><span id="result-count" class="result-count" role="status">20 produk</span></div>
+          <div id="category-filters" class="filters" role="group" aria-label="Filter kategori"></div>
+          <div id="product-grid" class="product-grid"></div>
+          <div id="no-results" class="empty-results" hidden><h3>Produk belum ditemukan</h3><p>Coba kata pencarian lain atau tampilkan semua kategori.</p><button id="reset-filters" class="button secondary" type="button">Reset pencarian & filter</button></div>
+          <noscript><p class="notice">Aktifkan JavaScript untuk melihat katalog 20 produk dan menggunakan keranjang belanja.</p></noscript>
+        </div>
+        <aside class="cart-panel" id="keranjang" aria-labelledby="cart-heading">
+          <div class="cart-title"><div><p class="eyebrow">BELANJAANMU</p><h2 id="cart-heading" tabindex="-1">Keranjang belanja</h2></div><span class="cart-symbol" aria-hidden="true">🛒</span></div>
+          <p class="subtle">Atur jumlah dan periksa total belanja.</p>
+          <div id="cart-empty" class="cart-empty"><span class="empty-cart-icon" aria-hidden="true">🛍️</span><p>Keranjangmu masih kosong.</p><span>Yuk, pilih kebutuhan rumahmu.</span><a href="#product-grid" class="text-link">Lihat produk →</a></div>
+          <div id="cart-items"></div>
+          <form id="order-form" novalidate>
+            <div class="estimate-box"><div><span>Jumlah barang</span><strong id="cart-units">0 barang</strong></div><div class="total-row"><span>Total belanja</span><strong id="order-total">Rp0</strong></div><p id="estimate-help">Pilih produk untuk menghitung total.</p></div>
+            <fieldset><legend>Informasi pemesan</legend><div class="field"><label for="customer-name">Nama lengkap</label><input id="customer-name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Nama kamu" required aria-describedby="customer-name-error"><p id="customer-name-error" class="field-error"></p></div><div class="field"><label for="customer-phone">Nomor WhatsApp</label><input id="customer-phone" type="tel" autocomplete="tel" placeholder="08… atau 62…" required aria-describedby="phone-help customer-phone-error"><p id="phone-help" class="help">Untuk konfirmasi pesanan oleh toko.</p><p id="customer-phone-error" class="field-error"></p></div></fieldset>
+            <p id="form-error" class="field-error" role="alert"></p>
+            <button id="review-button" class="button full" type="submit" disabled>Periksa pesanan <span aria-hidden="true">→</span></button>
+          </form>
+          <section id="review-panel" class="review-panel" hidden aria-labelledby="review-heading"><h3 id="review-heading" tabindex="-1">Periksa pesananmu</h3><dl id="review-contact"></dl><ul id="review-lines"></ul><p id="review-dates"></p><p class="review-total" id="review-total"></p><button id="edit-request" class="text-link" type="button">← Ubah pesanan</button><p class="help">Rincian pesanan akan dibuka di WhatsApp. Tekan kirim untuk meminta konfirmasi ketersediaan dari toko.</p><button id="whatsapp-button" class="button full" type="button" disabled>Kirim pesanan via WhatsApp ↗</button></section>
+          <p id="unavailable-note" class="availability-note">Pemesanan WhatsApp belum tersedia. Kamu tetap dapat menyusun keranjang dan melihat total belanja.</p>
+          <p class="cart-footnote">Harga dan stok dapat berubah. Toko akan mengonfirmasi pesanan sebelum diproses.</p>
+        </aside>
+      </div>
+    </section>
+    <section id="cara-belanja" class="how-section" aria-labelledby="how-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">MUDAH DAN PRAKTIS</p><h2 id="how-heading">Belanja kebutuhanmu dalam 3 langkah.</h2></div><p>Pilih produk, periksa pesanan,<br>lalu hubungi Bomidi.</p></div><ol class="steps"><li><span class="step-number">01</span><h3>Pilih produk</h3><p>Jelajahi katalog dan tambahkan kebutuhanmu ke keranjang belanja.</p></li><li><span class="step-number">02</span><h3>Periksa pesanan</h3><p>Atur jumlah barang dan lihat total belanja sebelum melanjutkan.</p></li><li><span class="step-number">03</span><h3>Konfirmasi dengan toko</h3><p>Kirim rincian pesanan melalui WhatsApp dan tunggu konfirmasi ketersediaan.</p></li></ol></div></section>
+    <section class="container faq-section" id="faq" aria-labelledby="faq-heading"><div><p class="eyebrow">INFORMASI BELANJA</p><h2 id="faq-heading">Ada yang ingin<br>kamu tanyakan?</h2><p class="subtle">Informasi penting seputar belanja<br>di minimarket Bomidi.</p><a class="text-link" href="#kontak">Informasi toko →</a></div><div class="faq-list"><details><summary>Apakah harga di katalog selalu terbaru?</summary><p>Harga pada katalog adalah contoh dan dapat berubah. Toko akan mengonfirmasi harga akhir saat pesanan diproses.</p></details><details><summary>Apakah semua produk selalu tersedia?</summary><p>Stok tidak diperbarui secara real-time. Ketersediaan produk akan dikonfirmasi oleh toko setelah pesanan dikirim.</p></details><details><summary>Bagaimana cara mengirim pesanan?</summary><p>Tambahkan produk ke keranjang, isi nama dan nomor WhatsApp, lalu periksa pesanan. Tombol WhatsApp menyiapkan draf yang bisa kamu tinjau dan kirim.</p></details><details><summary>Apakah pesanan langsung diproses?</summary><p>Belum. Pesanan baru diproses setelah toko mengonfirmasi ketersediaan produk dan detail pemesanan.</p></details><details><summary>Apakah data kontak saya disimpan?</summary><p>Nama dan nomor kontak tidak disimpan oleh website. Keranjang disimpan di browser ini jika penyimpanan diizinkan. Rincian kontak dimasukkan ke draf WhatsApp saat kamu melanjutkan.</p></details></div></section>
+    <section class="container contact-section" id="kontak" aria-labelledby="contact-heading"><div class="contact-mountain" aria-hidden="true">B</div><div><p class="eyebrow">SELAMAT DATANG DI BOMIDI</p><h2 id="contact-heading">Kebutuhan keluarga, lebih praktis.</h2><p id="business-contact">Informasi kontak, lokasi toko, dan jam operasional akan tersedia setelah dikonfirmasi pengelola.</p></div><a class="button light" href="#katalog">Pilih produk <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="container site-footer">
+    <div class="footer-identity"><a class="brand footer-brand" href="#beranda"><span class="brand-mark" aria-hidden="true">B</span><span>BOMIDI<span class="brand-sub">MINIMARKET KELUARGA</span></span></a><p>Belanja kebutuhan harian dengan praktis.</p></div>
+    <div class="footer-location"><h2>Alamat toko</h2><address id="footer-address">Informasi alamat toko belum tersedia.</address><p id="footer-address-note" hidden></p></div>
+    <span>© <span id="year">2026</span> Bomidi · Katalog contoh</span>
+  </footer>
+  <div id="status-message" class="toast" role="status" aria-live="polite"></div>
+  <p id="storage-warning" class="storage-warning" role="status" hidden>Keranjang dapat digunakan, tetapi belum bisa disimpan pada browser ini.</p>
+</body>
+</html>
